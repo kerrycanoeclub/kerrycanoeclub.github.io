@@ -8,7 +8,7 @@ email: kerrycanoeclub@gmail.com
 author: Barry Fitzgerald
 description: > # "Kerry's foremost canoe club
 copyright: 'Copyright &copy; 2015 Your Name. All Rights Reserved.'
-credits: 'Credits: Barry Fitzgerald'
+credits: 'Credits: BF'
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -24,7 +24,7 @@ permalink: pretty
 
 social:
   - title: facebook
-    url: https://facebook.com/kerrycanoeclub
+    url: https://www.facebook.com/groups/kerrycanoeclub/
     icon: facebook
   - title: email
     url: mailto:kerrycanoeclub@gmail.com

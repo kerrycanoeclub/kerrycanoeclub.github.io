@@ -6,4 +6,5 @@ title: Regular events
 description: |
 ---
 <p>During the winter we have club trip every two weeks.</p> 
-<p>In the summer we also have a forthnightly evening paddle from our base in Killorglin.</p> 
+<p>In the summer we have a fortnightly evening paddle from our base in Killorglin.</p> 
+<p>In addition we have regular pool sessions, social events and peer paddling.</p> 

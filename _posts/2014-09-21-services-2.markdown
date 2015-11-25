@@ -1,9 +1,9 @@
 ---
 layout: default
-img: flatwater.jpg
+img: carragh.jpg
 category: Services
-title: Safety and Training
+title: Variety
 description: |
 ---
-<p>We take safety seriously!</p> 
-<p>We have a focus on safety in everything we do. We also have frequent training sessions for club members on all aspects of safe kayaking.</p> 
+<p>We cater for many disciplines including whitewater, surf kayaking and sea kayaking.</p> 
+<p>The club has members with a wide range of experience, from new paddlers to 20 year veterans! Whatever your level of experience is - you will be welcome here.</p> 

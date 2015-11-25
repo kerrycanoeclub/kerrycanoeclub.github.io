@@ -1,0 +1,9 @@
+---
+layout: default
+img: flatwater.jpg
+category: Services
+title: Safety and Training
+description: |
+---
+<p>We take safety seriously!</p> 
+<p>We have a focus on safety in everything we do. We have frequent training sessions for club members on all aspects of safe kayaking.</p> 

@@ -29,3 +29,27 @@ $('div.modal').on('show.bs.modal', function() {
 		}
 	}
 });
+
+function init_map() {
+
+    var isDraggable = $(document).width() > 480 ? true : false;
+
+    var myOptions = {
+        draggable: isDraggable,
+        scrollwheel: false,
+        zoom: 15,
+        center: new google.maps.LatLng(52.105744550215384, -9.783696569836366),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map-container"), myOptions);
+    marker = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(52.105744550215384, -9.783696569836366)
+    });
+    infowindow = new google.maps.InfoWindow({content: "<b>Bianconi Carpark</b><br/>Off Annadale Road<br/> Killorglin"});
+    google.maps.event.addListener(marker, "click", function () {
+        infowindow.open(map, marker);
+    });
+    infowindow.open(map, marker);
+}
+google.maps.event.addDomListener(window, 'load', init_map);

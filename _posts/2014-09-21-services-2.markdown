@@ -6,4 +6,4 @@ title: Variety
 description: |
 ---
 <p>We cater for many disciplines including whitewater, surf kayaking and sea kayaking.</p> 
-<p>The club has members with a wide range of experience, from new paddlers to 20 year veterans! Whatever your level of experience is - you will be welcome here.</p> 
+<p>The club has members with a wide range of experience, from new paddlers to 20 year veterans! Whatever your level of experience is, you will be welcome here.</p> 

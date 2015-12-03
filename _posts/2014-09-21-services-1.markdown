@@ -2,9 +2,9 @@
 layout: default
 img: paddlers.jpg
 category: Services
-title: Regular events
+title: Regular Events
 description: |
 ---
-<p>During the winter we have club trip every two weeks.</p> 
-<p>In the summer we have a fortnightly evening paddle from our base in Killorglin.</p> 
+<p>During the winter we have a club trip every two weeks.</p> 
+<p>In the summer we have a weekly evening paddle from our base in Killorglin.</p> 
 <p>In addition we have regular pool sessions, social events and peer paddling.</p> 

@@ -1,0 +1,31 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: http://kerrycanoeclub.com
+title: Kerry Canoe Club
+email: kerrycanoeclub@gmail.com
+author: Barry Fitzgerald
+description: > # "Kerry's foremost canoe club
+copyright: 'Copyright &copy; 2015 Kerry Canoe Club. All Rights Reserved.'
+credits: 'Credits: BF'
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+social:
+  - title: facebook
+    url: https://www.facebook.com/groups/kerrycanoeclub/
+    icon: facebook
+  - title: email
+    url: mailto:kerrycanoeclub@gmail.com
+    icon: envelope

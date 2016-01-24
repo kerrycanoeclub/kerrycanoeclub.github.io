@@ -1,0 +1,10 @@
+---
+layout: default
+img: beginners.jpg
+category: Services
+title: Beginners are always Welcome
+description: |
+---
+<p>We always aim to provide a fun learning environment for beginners.</p> 
+<p>Not sure what to wear or even if it's the right sport for you?</p>
+<p>Just get in touch! We are happy to help with any questions.</p>

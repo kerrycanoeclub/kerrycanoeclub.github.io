@@ -13,6 +13,8 @@ credits: 'Credits: BF'
 # ----------------------- #
 #    Jekyll & Plugins     #
 # ----------------------- #
+gems:
+  - jekyll-seo-tag
 
 # Build settings
 markdown: kramdown

@@ -9,19 +9,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#home">{{ site.title }}</a>
+            <a class="navbar-brand page-scroll" href="{{ site.baseurl }}/#home">{{ site.title }}</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">  
             	<li>
-                    <a class="page-scroll" href="#about">About</a>
+                    <a class="page-scroll" href="{{ site.baseurl }}/#about">About</a>
                 </li>            
                 <li>
-                    <a class="page-scroll" href="#services">What we do</a>
+                    <a class="page-scroll" href="{{ site.baseurl }}/#services">What we do</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#details">Details</a>
+                    <a class="page-scroll" href="{{ site.baseurl }}/#details">Details</a>
                 </li>
             </ul>
         </div>
@@ -29,37 +29,3 @@
     </div>
     <!-- /.container -->
 </nav>
-
-<section id="home">
-<!-- Header -->
-	<div class="intro-header">
-
-		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="intro-message">
-						<h1>{{ page.title }}</h1>
-						<h3>{{ page.subTitle }}</h3>
-						<h5>Join our Facebook group to see our latest events.</h5>
-						<hr class="intro-divider">
-						<ul class="list-inline intro-social-buttons">
-							{% for social in site.social %}
-							<li>
-								<a href="{{ social.url }}" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-{{ social.icon }} fa-fw"></i> <span class="network-name">{{ social.title }}</span></a>
-							</li>
-							{% endfor %}
-							<li>
-								<a href="/membership_form.pdf" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-file-pdf-o fa-fw"></i> <span class="network-name">Membership Form</span></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<!-- /.container -->
-
-	</div>
-	<!-- /.intro-header -->
-</section>

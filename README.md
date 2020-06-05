@@ -12,13 +12,13 @@ Must have ruby, gems and bundler installed on your system.
 Check with:
 ```
 $ ruby -v
-# ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
+# e.g. ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
 
 $ gem -v
-# 3.1.2
+# e.g. 3.1.2
 
 $ bundle -v
-# Bundler version 2.1.4
+# e.g. Bundler version 2.1.4
 ```
 
 Then you can run the following from the root folder to install dependencies:

@@ -8,3 +8,4 @@ description: |
 <p>We always aim to provide a fun learning environment for beginners.</p> 
 <p>Not sure what to wear or even if it's the right sport for you?</p>
 <p>Just get in touch! We are happy to help with any questions.</p>
+<p><a href="/beginners.html" class="btn btn-default btn-lg"><i class="fa fa-hand-o-right fa-fw"></i> <span class="network-name">More info</span></a></p>

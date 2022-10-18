@@ -38,7 +38,8 @@ function init_map() {
         draggable: isDraggable,
         scrollwheel: false,
         zoom: 15,
-        center: new google.maps.LatLng(52.105744550215384, -9.783696569836366),
+        // center: new google.maps.LatLng(52.105744550215384, -9.783696569836366),
+        center: new google.maps.LatLng(52.104981, -9.780358),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map-container"), myOptions);

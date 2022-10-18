@@ -39,7 +39,7 @@ function init_map() {
         scrollwheel: false,
         zoom: 15,
         // center: new google.maps.LatLng(52.105744550215384, -9.783696569836366),
-        center: new google.maps.LatLng(52.104981, -9.780358),
+        center: new google.maps.LatLng(52.10517002339235, -9.780599355068741),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map-container"), myOptions);

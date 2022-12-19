@@ -45,9 +45,9 @@ function init_map() {
     map = new google.maps.Map(document.getElementById("map-container"), myOptions);
     marker = new google.maps.Marker({
         map: map,
-        position: new google.maps.LatLng(52.105744550215384, -9.783696569836366)
+        position: new google.maps.LatLng(52.10517002339235, -9.780599355068741)
     });
-    infowindow = new google.maps.InfoWindow({content: "<b>Bianconi Carpark</b><br/>Off Annadale Road<br/> Killorglin"});
+    infowindow = new google.maps.InfoWindow({content: "<b>Top Oil Service Station</b><br/>Killarney Road<br/> Killorglin"});
     google.maps.event.addListener(marker, "click", function () {
         infowindow.open(map, marker);
     });

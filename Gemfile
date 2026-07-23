@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
 gem 'github-pages'
-gem "webrick", ">= 1.8.2"
+gem "webrick", ">= 1.9.2"

@@ -20,6 +20,16 @@ plugins:
 markdown: kramdown
 permalink: pretty
 
+# Repo docs that should not be published to the site.
+# Setting exclude replaces Jekyll's defaults, so those are listed too.
+exclude:
+  - CLAUDE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #

@@ -1,6 +1,7 @@
 <section id="services">
 <!-- Page Content -->
-{% for post in site.posts reversed %}
+{% assign services = site.services | sort: "path" %}
+{% for post in services %}
   {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
     {% if thecycle == 'odd' %}
     <div class="content-section-a">

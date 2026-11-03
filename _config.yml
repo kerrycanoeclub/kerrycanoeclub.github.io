@@ -31,3 +31,8 @@ social:
   - title: email
     url: mailto:kerrycanoeclubkillorglin@gmail.com
     icon: envelope
+
+# Homepage feature blocks (rendered by _includes/page_content.html, no standalone pages)
+collections:
+  services:
+    output: false

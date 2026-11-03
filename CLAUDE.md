@@ -20,6 +20,8 @@ If `bundle exec jekyll` reports "command not found" (a missing rbenv shim), run 
 bundle exec ruby "$(bundle exec ruby -e 'print Gem.bin_path("jekyll","jekyll")')" build
 ```
 
+Cloud sessions can't reach outside websites (only GitHub works), so don't try to check external links with web fetches or curl. `.claude/settings.json` denies `WebFetch` and the `web-fetch` agent for this reason. List the links that need checking and ask the user to click through them.
+
 Dependencies: `Gemfile` pins `github-pages` to a specific version so local builds match what GitHub Pages runs (Jekyll 3.10). Dependabot opens PRs that bump `Gemfile.lock`. Only plugins on the GitHub Pages allowlist work. Two are in use: `jekyll-seo-tag` (the `{% seo %}` tag in `_includes/head.html`, which writes each page's `<title>`, description and social-sharing tags) and `jekyll-sitemap` (generates `sitemap.xml`). The `defaults:` block in `_config.yml` sets the share image for every page and keeps `assets/documents/archive/` out of the sitemap.
 
 ## Architecture

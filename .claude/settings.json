@@ -5,6 +5,10 @@
       "Bash(bundle exec jekyll build:*)",
       "Bash(bundle exec jekyll serve:*)",
       "Bash(rbenv rehash)"
+    ],
+    "deny": [
+      "WebFetch",
+      "Agent(web-fetch)"
     ]
   }
 }

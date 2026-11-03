@@ -14,11 +14,13 @@ bundle exec jekyll serve      # local dev server at http://127.0.0.1:4000
 bundle exec jekyll build      # build into _site/ (gitignored)
 ```
 
-If `bundle exec jekyll` reports "command not found" (a missing rbenv shim), run `rbenv rehash` or call the gem directly:
+In cloud sessions, `.claude/hooks/session-start.sh` puts the gem executables folder on `PATH` and runs `bundle install` in the background at session start (skipped when `Gemfile`/`Gemfile.lock` are unchanged), so the session starts without waiting. If a build right at the start of a session fails with missing gems, the install is still running: wait a moment or run `bundle install`. If `bundle exec jekyll` still reports "command not found", run `rbenv rehash` or call the gem directly:
 
 ```bash
 bundle exec ruby "$(bundle exec ruby -e 'print Gem.bin_path("jekyll","jekyll")')" build
 ```
+
+Cloud sessions can't reach outside websites (only GitHub works), so don't try to check external links with web fetches or curl. A `PreToolUse` hook (`.claude/hooks/block-web-fetch.sh`) blocks `WebFetch` and the `web-fetch` agent in cloud sessions only; local sessions can fetch pages as normal. List the links that need checking and ask the user to click through them.
 
 Dependencies: `Gemfile` pins `github-pages` to a specific version so local builds match what GitHub Pages runs (Jekyll 3.10). Dependabot opens PRs that bump `Gemfile.lock`. Only plugins on the GitHub Pages allowlist work. Two are in use: `jekyll-seo-tag` (the `{% seo %}` tag in `_includes/head.html`, which writes each page's `<title>`, description and social-sharing tags) and `jekyll-sitemap` (generates `sitemap.xml`). The `defaults:` block in `_config.yml` sets the share image for every page and keeps `assets/documents/archive/` out of the sitemap.
 

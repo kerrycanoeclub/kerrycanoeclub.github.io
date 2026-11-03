@@ -14,7 +14,7 @@ bundle exec jekyll serve      # local dev server at http://127.0.0.1:4000
 bundle exec jekyll build      # build into _site/ (gitignored)
 ```
 
-If `bundle exec jekyll` reports "command not found" (a missing rbenv shim), run `rbenv rehash` or call the gem directly:
+In cloud sessions, `.claude/hooks/session-start.sh` runs `bundle install` at session start (skipped when `Gemfile`/`Gemfile.lock` are unchanged) and puts the gem executables folder on `PATH`, so `bundle exec jekyll build` works straight away. If `bundle exec jekyll` still reports "command not found", run `rbenv rehash` or call the gem directly:
 
 ```bash
 bundle exec ruby "$(bundle exec ruby -e 'print Gem.bin_path("jekyll","jekyll")')" build

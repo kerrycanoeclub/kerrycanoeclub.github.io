@@ -16,6 +16,7 @@ credits: 'Credits: BF'
 # ----------------------- #
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Build settings
 markdown: kramdown
@@ -36,10 +37,10 @@ exclude:
 # ----------------------- #
 
 social:
-  - title: facebook
+  - title: Facebook
     url: https://www.facebook.com/kerrycanoeclub/
     icon: facebook
-  - title: email
+  - title: Email
     url: mailto:kerrycanoeclubkillorglin@gmail.com
     icon: envelope
 
@@ -47,3 +48,15 @@ social:
 collections:
   services:
     output: false
+
+defaults:
+  # Picture shown when a page is shared on Facebook, WhatsApp etc.
+  - scope:
+      path: ""
+    values:
+      image: /img/intro-bg.jpg
+  # Keep archived documents out of the sitemap
+  - scope:
+      path: "assets/documents/archive"
+    values:
+      sitemap: false

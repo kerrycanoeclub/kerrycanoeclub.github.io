@@ -1,9 +1,13 @@
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
+        // Links look like "/#about". Only animate when the target section is
+        // on the current page; otherwise let the browser follow the link.
+        if (this.pathname !== location.pathname || !this.hash) return;
+        var $target = $(this.hash);
+        if (!$target.length) return;
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $target.offset().top
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });

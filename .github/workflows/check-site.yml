@@ -1,0 +1,31 @@
+# Builds the site and checks the result on every pull request and every push
+# to master: the Jekyll build must succeed, and every internal link, image and
+# script must point at a file that exists. External links are not checked.
+name: Check site
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      LC_ALL: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+
+      - name: Check links and images
+        run: bundle exec htmlproofer ./_site --disable-external

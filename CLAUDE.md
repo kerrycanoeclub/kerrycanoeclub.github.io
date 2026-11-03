@@ -1,0 +1,33 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Overview
+
+Static website for Kerry Canoe Club (kerrycanoeclub.com), built with Jekyll and deployed by GitHub Pages straight from the default branch (custom domain set in `CNAME`). There is no CI, no test suite and no linter. "Testing" a change means building the site and checking the output.
+
+## Commands
+
+```bash
+bundle install                # install the pinned github-pages gem set (see Gemfile)
+bundle exec jekyll serve      # local dev server at http://127.0.0.1:4000
+bundle exec jekyll build      # build into _site/ (gitignored)
+```
+
+If `bundle exec jekyll` reports "command not found" (a missing rbenv shim), run `rbenv rehash` or call the gem directly:
+
+```bash
+bundle exec ruby "$(bundle exec ruby -e 'print Gem.bin_path("jekyll","jekyll")')" build
+```
+
+Dependencies: `Gemfile` pins `github-pages` to a specific version so local builds match what GitHub Pages runs (Jekyll 3.10). Dependabot opens PRs that bump `Gemfile.lock`. Only plugins on the GitHub Pages allowlist work. `jekyll-seo-tag` (the `{% seo %}` tag in `_includes/head.html`) is the only one in use.
+
+## Architecture
+
+- **Homepage** (`index.html`, `layout: default`): `_layouts/default.html` stitches together the `_includes/` sections in order: header, home, about, page_content, details, contact, footer and js. The nav in `header.html` scrolls to anchors (`/#about`, `/#details`) on this page.
+- **Homepage feature blocks come from the `_services/` collection**: `_includes/page_content.html` loops over `site.services` sorted by file path and alternates the image left and right. Each file supplies `title`, `img` (a filename under `img/services/`) and HTML body content. To add, reorder or edit a homepage block, edit those files. The filename order (`services-1`, `services-2`, ...) sets the display order. The collection has `output: false` in `_config.yml`, so the blocks never get pages of their own. The site has no blog posts and no RSS feed.
+- **Content pages** (`beginners.html`, `safety.html`, `policies.html` and so on) use `_layouts/page.html`. They set `title`, `subTitle`, `img` (a hero image from `img/services/`) and an explicit `permalink: <name>.html`, so they are served at the site root.
+- **Asset paths are relative** (`css/...`, `img/...`, `js/...`, `assets/...`). That only works because every page lives at the site root. A new page needs the same `permalink: <name>.html` pattern, or root-absolute paths.
+- **Styling**: Bootstrap 3 (`css/bootstrap.min.css`), plus the "landing-page" theme in `css/landing-page.css` and `css/disciplines_styles.css`, and Font Awesome 4.1 (`font-awesome-4.1.0/`). jQuery 1.11 plus `js/landing-page.js`. There is no Sass, so CSS changes go straight into these `.css` files.
+- **Site-wide data** (title, contact email, copyright, social links) lives in `_config.yml`. The `social:` list drives the buttons in `home.html` and `contact.html`.
+- **Documents**: club PDFs and forms (constitution, safety statement, codes of conduct, juniors and safeguarding documents) are in `assets/documents/` and are linked from `policies.html` and other pages. When a document is replaced with a newer version (often renamed with a year), update every link to it. Older PDFs and images at the repo root are legacy files.

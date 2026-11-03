@@ -7,7 +7,8 @@ title: Kerry Canoe Club
 email: kerrycanoeclubkillorglin@gmail.com
 author: Barry Fitzgerald
 description: > # "Kerry's foremost canoe club
-copyright: 'Copyright &copy; 2020 Kerry Canoe Club. All Rights Reserved.'
+# Footer shows "Copyright © <build year> " followed by this text
+copyright: 'Kerry Canoe Club. All Rights Reserved.'
 credits: 'Credits: BF'
 
 # ----------------------- #
@@ -20,6 +21,16 @@ plugins:
 markdown: kramdown
 permalink: pretty
 
+# Repo docs that should not be published to the site.
+# Setting exclude replaces Jekyll's defaults, so those are listed too.
+exclude:
+  - CLAUDE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
@@ -31,3 +42,8 @@ social:
   - title: email
     url: mailto:kerrycanoeclubkillorglin@gmail.com
     icon: envelope
+
+# Homepage feature blocks (rendered by _includes/page_content.html, no standalone pages)
+collections:
+  services:
+    output: false

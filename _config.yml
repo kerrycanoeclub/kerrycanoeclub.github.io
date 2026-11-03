@@ -2,11 +2,11 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://kerrycanoeclub.com
+url: https://kerrycanoeclub.com
 title: Kerry Canoe Club
 email: kerrycanoeclubkillorglin@gmail.com
 author: Barry Fitzgerald
-description: > # "Kerry's foremost canoe club
+description: "Kerry's foremost canoe club"
 # Footer shows "Copyright © <build year> " followed by this text
 copyright: 'Kerry Canoe Club. All Rights Reserved.'
 credits: 'Credits: BF'

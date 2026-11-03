@@ -12,7 +12,7 @@ Static website for Kerry Canoe Club (kerrycanoeclub.com), built with Jekyll and 
 bundle install                # install the pinned github-pages gem set (see Gemfile)
 bundle exec jekyll serve      # local dev server at http://127.0.0.1:4000
 bundle exec jekyll build      # build into _site/ (gitignored)
-LC_ALL=C.UTF-8 bundle exec htmlproofer ./_site --disable-external --no-enforce-https   # the CI check, run after a build
+LC_ALL=C.UTF-8 bundle exec htmlproofer ./_site --disable-external   # the CI check, run after a build
 ```
 
 In cloud sessions, `.claude/hooks/session-start.sh` puts the gem executables folder on `PATH` and runs `bundle install` in the background at session start (skipped when `Gemfile`/`Gemfile.lock` are unchanged), so the session starts without waiting. If a build right at the start of a session fails with missing gems, the install is still running: wait a moment or run `bundle install`. If `bundle exec jekyll` still reports "command not found", run `rbenv rehash` or call the gem directly:

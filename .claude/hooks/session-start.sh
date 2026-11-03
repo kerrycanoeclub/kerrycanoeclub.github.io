@@ -13,6 +13,17 @@ cd "${CLAUDE_PROJECT_DIR:-.}"
 gem_dir="$(ruby -e 'print Gem.dir')"
 gem_bindir="$(ruby -e 'print Gem.bindir')"
 
+# The gem executables folder (where `jekyll` lives) is not on PATH by
+# default, which makes `bundle exec jekyll` report "command not found".
+# Set it before going async: it does not depend on the install.
+if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
+  echo "export PATH=\"$gem_bindir:\$PATH\"" >> "$CLAUDE_ENV_FILE"
+fi
+
+# Run the rest in the background so the session starts straight away.
+# A build started in the first moments of a session may need to wait for it.
+echo '{"async": true, "asyncTimeout": 300000}'
+
 # Install only when the Gemfile, lockfile or this script changed since the
 # last successful install. The hash file sits in the gem directory, so it
 # disappears together with the gems if the container is rebuilt.
@@ -25,10 +36,4 @@ if ! sha256sum --check --status "$hashes" 2>/dev/null; then
     rbenv rehash
   fi
   sha256sum .claude/hooks/session-start.sh Gemfile Gemfile.lock > "$hashes" || rm -f "$hashes"
-fi
-
-# The gem executables folder (where `jekyll` lives) is not on PATH by
-# default, which makes `bundle exec jekyll` report "command not found".
-if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
-  echo "export PATH=\"$gem_bindir:\$PATH\"" >> "$CLAUDE_ENV_FILE"
 fi

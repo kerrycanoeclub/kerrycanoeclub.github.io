@@ -1,44 +1,18 @@
 # kerrycanoeclub.com
 
-## Local development
+Website for Kerry Canoe Club, built with Jekyll and published by GitHub Pages from the `master` branch.
 
-Read here for more info.
-[https://help.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll](https://help.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
+## Run it locally
 
-### Basics of install and run
+You need Ruby and Bundler installed. Then, from this folder:
 
-Must have ruby, gems and bundler installed on your system.
-
-Check with:
-```
-$ ruby -v
-# e.g. ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
-
-$ gem -v
-# e.g. 3.1.2
-
-$ bundle -v
-# e.g. Bundler version 2.1.4
+```bash
+bundle install
+bundle exec jekyll serve
 ```
 
-Then you can run the following from the root folder to install dependencies:
+The site runs at http://127.0.0.1:4000.
 
-    $ bundle install
+`Gemfile` pins the `github-pages` gem so local builds match what GitHub Pages runs. Dependabot opens PRs to keep `Gemfile.lock` up to date.
 
-And build the project locally:
-
-    $ bundle exec jekyll serve
-
-The github pages site should then be running on `# Server address: http://127.0.0.1:4000/`
-
-### Github-pages GEM
-
-Regularly update the `github-pages` gem on your computer.
-
-In Terminal run
-- If you installed Bundler, run `$ bundle update github-pages`
-- If you don't have Bundler installed, run `$ gem update github-pages`
-
-
-
-
+See [CLAUDE.md](CLAUDE.md) for how the site is put together: where page content, homepage blocks, images and club documents live, and what to update when a document is replaced.

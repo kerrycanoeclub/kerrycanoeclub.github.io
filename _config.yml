@@ -37,10 +37,10 @@ exclude:
 # ----------------------- #
 
 social:
-  - title: facebook
+  - title: Facebook
     url: https://www.facebook.com/kerrycanoeclub/
     icon: facebook
-  - title: email
+  - title: Email
     url: mailto:kerrycanoeclubkillorglin@gmail.com
     icon: envelope
 
